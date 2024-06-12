@@ -13,9 +13,10 @@ public class Main {
 
         int result = str.length;
 
-        if(str.length == 1 && !str[0].contains("\\w")) {
-            if(str[0].contains())
-            result = 0;
+        if(str.length == 1) {
+            if(str[0].isEmpty()) {
+                result = 0;
+            }
         }
 
         System.out.println(result);
