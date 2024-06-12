@@ -9,8 +9,15 @@ public class Main {
 
         BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
 
-        String[] str = br.readLine().trim().split(" ");
+        String[] str = br.readLine().trim().split("\\s");
 
-        System.out.println(str.length);
+        int result = str.length;
+
+        if(str.length == 1 && !str[0].contains("\\w")) {
+            if(str[0].contains())
+            result = 0;
+        }
+
+        System.out.println(result);
     }
 }
