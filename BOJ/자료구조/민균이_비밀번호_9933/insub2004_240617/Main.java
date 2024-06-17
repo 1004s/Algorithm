@@ -26,7 +26,7 @@ public class Main {
         for (int i = 0; i < arr.length; i++) {
             StringBuffer sb = new StringBuffer(arr[i]);
             if(map.containsKey(sb.reverse().toString())) {
-                System.out.printf(arr[i].length() + " " + arr[i].charAt(arr[i].length()/2));
+                System.out.print(sb.length() + " " + map.get(sb.reverse().toString()));
                 break;
             }
         }
