@@ -19,7 +19,7 @@ public class Main {
         int row = 0;
         for(int i=0; i<N; i++) {
             boolean isEmpty = true;
-            for(int j=0;j<M;j++){
+            for(int j=0; j<M; j++){
                 if(castle[i][j] == 'X') {
                     isEmpty = false;
                     break;
@@ -33,7 +33,7 @@ public class Main {
         int col = 0;
         for(int i=0; i<M; i++) {
             boolean isEmpty = true;
-            for(int j=0;j<N;j++){
+            for(int j=0; j<N; j++){
                 if(castle[j][i] == 'X') {
                     isEmpty = false;
                     break;
