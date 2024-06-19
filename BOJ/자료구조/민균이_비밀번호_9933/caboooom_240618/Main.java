@@ -14,13 +14,11 @@ public class Main {
             String word = reader.readLine();
             int length = word.length();
 
-            if(length%2 == 1) {
-                String reversedWord = reverseString(word);
-                if(words.contains(word) || word.equals(reversedWord)) {
-                    System.out.println(length + " " + word.toCharArray()[word.length()/2]);
-                }
-                words.add(reversedWord);
+            String reversedWord = reverseString(word);
+            if(words.contains(word) || word.equals(reversedWord)) {
+                System.out.println(length + " " + word.toCharArray()[length/2]);
             }
+            words.add(reversedWord);
         }
     }
 
