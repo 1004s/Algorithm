@@ -14,8 +14,6 @@ public class Main {
         int x = Integer.parseInt(len[0]);
         int y = Integer.parseInt(len[1]);
 
-        int result = 0;
-
         String[][] arr = new String[x][y];
 
         for (int i = 0; i < x; i++) {
@@ -25,14 +23,29 @@ public class Main {
             }
         }
 
-        if (x == y) {
-            for (int i = 0; i < x; i++) {
-                for (int j = 0; j < y; j++) {
-                    if ()
+        int xGuard = x;
+        int yGuard = y;
+
+        for (int i = 0; i < x; i++) {
+            for (int j = 0; j < y; j++) {
+                if (arr[i][j].equals("X")) {
+                    xGuard--;
+                    break;
                 }
             }
         }
 
-        System.out.println(result);
+        for (int i = 0; i < y; i++) {
+            for (int j = 0; j < x; j++) {
+                if (arr[j][i].equals("X")) {
+                    yGuard--;
+                    break;
+                }
+            }
+        }
+
+        System.out.println(Math.max(xGuard, yGuard));
+
+
     }
 }
