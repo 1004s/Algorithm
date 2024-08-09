@@ -1,4 +1,4 @@
-package PGS.level_1.뒤에서5등까지;
+package PGS.level_0.뒤에서5등까지;
 
 import java.util.ArrayList;
 import java.util.Arrays;
