@@ -11,28 +11,27 @@ public class Main {
         int n = Integer.parseInt(line[0]);
         int k = Integer.parseInt(line[1]);
 
-        int[] eliminated = new int[n];
-        int peopleLeft = n;
-        int count = 0;
-        int index = -1;
-
-        while(peopleLeft > 1) {
-            while(count < k) {
-                ++index;
-                if(eliminated[index % n] == 0) {
-                    count++;
-                }
+        if(n == 1) {
+            System.out.println(1);
+            System.exit(0);
+        }
+        if(n == 2) {
+            if(k == 1) {
+                System.out.println(2);
+            } else {
+                System.out.println(1);
             }
-            eliminated[index % n] = 1;
-            peopleLeft--;
-            count = 0;
+            System.exit(0);
+        }
+        int[] dp = new int[n+1];
+        dp[0] = 1;
+        dp[1] = k;
+
+        for(int i = 2; i <= n; i++) {
+            dp[i] = (dp[i-1] + k) % n;
         }
 
-        for(int i = 0; i < n; i++) {
-            if(eliminated[i] == 0) {
-                System.out.println(i+1);
-                break;
-            }
-        }
+        System.out.println(dp[n-1]);
+
     }
 }
