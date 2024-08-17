@@ -11,27 +11,10 @@ public class Main {
         int n = Integer.parseInt(line[0]);
         int k = Integer.parseInt(line[1]);
 
-        if(n == 1) {
-            System.out.println(1);
-            System.exit(0);
-        }
-        if(n == 2) {
-            if(k == 1) {
-                System.out.println(2);
-            } else {
-                System.out.println(1);
-            }
-            System.exit(0);
-        }
-        int[] dp = new int[n+1];
-        dp[0] = 1;
-        dp[1] = k;
-
+        int result = 0;
         for(int i = 2; i <= n; i++) {
-            dp[i] = (dp[i-1] + k) % n;
+            result = (result + k) % i;
         }
-
-        System.out.println(dp[n-1]);
-
+        System.out.println(result + 1);
     }
 }
