@@ -2,6 +2,9 @@ package BOJ.자료구조.회전하는_큐_1021.caboooom_240809;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
+import java.util.ArrayDeque;
+import java.util.Deque;
+import java.util.Iterator;
 
 public class Main {
     public static void main(String[] args) throws Exception {
@@ -9,38 +12,47 @@ public class Main {
         String[] line = reader.readLine().split(" ");
         int n = Integer.parseInt(line[0]);
         int m = Integer.parseInt(line[1]);
+        int count = 0;
+
+        Deque<Integer> queue = new ArrayDeque<>();
+        for(int i = 0; i < n; i++) {
+            queue.add(i+1);
+        }
 
         line = reader.readLine().split(" ");
-        int shiftCount = 0;
-        int headIndex = 0;
-        for(int i = 0; i < m; i++) {
-            int targetIndex = Integer.parseInt(line[i]) - 1 - i;
-            int idx;
-            if(targetIndex < headIndex) {
-                idx = n - ((headIndex-1) - targetIndex);
-            } else {
-                idx = headIndex + targetIndex;
-            }
-            if(idx < n/2) {
-                shiftCount += (idx+1);
-                n--;
-//                headIndex += shiftCount;
-//                if(headIndex >= n) {
-//                    headIndex = (headIndex-n-1);
-//                } TODO
-            } else {
-                shiftCount += (n-idx);
-                n--;
-
-                // shift 한만큼 headIdx를 증가
-                headIndex -= (n-1-idx);
-                if(headIndex < 0) {
-                    headIndex = (n-1-headIndex);
+        for(int i = 0; i < line.length; i++) {
+            int target = Integer.parseInt(line[i]);
+            int index = 0;
+            Iterator<Integer> iter = queue.iterator();
+            while(true) {
+                if(iter.next() == target) {
+                    break;
                 }
+                index++;
             }
-//            m--;
+            if(index < queue.size() / 2 + 1) {
+                while(true) {
+                    int head = queue.removeFirst();
+                    if(head == target) {
+                        break;
+                    }
+                    queue.addLast(head);
+                    count++;
+                }
+            } else {
+                while(true) {
+                    int tail = queue.removeLast();
+                    count++;
+                    queue.addFirst(tail);
+                    if(tail == target) {
+                        break;
+                    }
+                }
+                queue.removeFirst();
+            }
         }
-        System.out.println(shiftCount);
+        System.out.println(count);
+
     }
 
 }
