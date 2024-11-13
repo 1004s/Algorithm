@@ -20,12 +20,12 @@ public class Main {
             int c = Integer.MAX_VALUE;  // i에서 1을 뺀 값을 저장할 변수
 
             if (i % 3 == 0) {
-                a = array[i / 3];
+                a = array[i / 3];       // array[i/3]에는 n(i)을 1로 만들때의 최솟값이 있음
             }
             if (i % 2 == 0) {
-                b = array[i / 2];
+                b = array[i / 2];       // array[i/2]에는 n(i)을 1로 만들때의 최솟값이 있음
             }
-            c = array[i - 1];
+            c = array[i - 1];           // array[i-1]에는 n(i)을 1로 만들때의 최솟값이 있음
 
             array[i] = Math.min(a,Math.min(b,c)) + 1;
         }
