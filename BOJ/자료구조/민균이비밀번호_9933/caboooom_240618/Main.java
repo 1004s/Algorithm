@@ -1,4 +1,4 @@
-package BOJ.자료구조.민균이_비밀번호_9933.caboooom_240618;
+package BOJ.자료구조.민균이비밀번호_9933.caboooom_240618;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;

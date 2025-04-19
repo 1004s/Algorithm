@@ -1,4 +1,4 @@
-package BOJ.자료구조.민균이_비밀번호_9933.insub2004_240617;
+package BOJ.자료구조.민균이비밀번호_9933.insub2004_240617;
 
 import java.io.BufferedReader;
 import java.io.IOException;
